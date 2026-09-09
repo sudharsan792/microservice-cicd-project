@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopnow-frontend
+  namespace: webapps
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shopnow-frontend
+  template:
+    metadata:
+      labels:
+        app: shopnow-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: sudharsan4362/shopnow-frontend:shopnow
+          ports:
+            - containerPort: 3000

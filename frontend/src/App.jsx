@@ -5,7 +5,7 @@ function App() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('http://ac0b03f69e3c24c709fff72f8f02005a-1737975332.ap-south-1.elb.amazonaws.com/products')
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error('Product API error:', error))
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="app">
       <header className="navbar">
-        <h1>🛒 Vayoo Shop</h1>
+        <h1>🛒 Shop Now Shop</h1>
 
         <nav>
           <a href="#home">Home</a>
@@ -27,7 +27,7 @@ function App() {
 
       <section className="hero" id="home">
         <div>
-          <h2>Welcome to Vayoo Shop</h2>
+          <h2>Welcome to Shop Now</h2>
           <p>
             Your simple e-commerce platform powered by microservices.
           </p>
@@ -56,7 +56,7 @@ function App() {
       </section>
 
       <footer id="about">
-        <p>© 2026 Vayoo Shop | Microservice E-Commerce Platform</p>
+        <p>© 2026 Shop Now | Microservice E-Commerce Platform</p>
       </footer>
     </div>
   )
