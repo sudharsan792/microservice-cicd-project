@@ -29,13 +29,14 @@ pipeline {
                 }
             }
         }
-    }
-}
-stage('Deploy to EKS') {
-    steps {
-        sh '''
-            kubectl apply -f k8s/deployment.yml
-            kubectl apply -f k8s/service.yml
-        '''
+
+        stage('Deploy to EKS') {
+            steps {
+                sh '''
+                    kubectl apply -f k8s/deployment.yml
+                    kubectl apply -f k8s/service.yml
+                '''
+            }
+        }
     }
 }
