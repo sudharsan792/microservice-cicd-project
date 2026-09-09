@@ -22,8 +22,8 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     sh '''
-                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                        docker tag product-service "$DOCKER_USER/product-service:latest"
+                        docker tag product-service "$DOCKER_USER/product-service:build-${BUILD_NUMBER}"
+                        docker push "$DOCKER_USER/product-service:build-${BUILD_NUMBER}"
                         docker push "$DOCKER_USER/product-service:latest"
                     '''
                 }
